@@ -1,4 +1,4 @@
-import {Data, Event, Booking} from '~/routes'
+import {Data, Event, Booking} from '~/routes/stationmanager'
 
 // please don't rely on it. Better generate random colors
 const colorMap: Record<string, string> = {
@@ -20,6 +20,7 @@ export const mapEvents = (data: Data): Event[] => {
       customerName: booking.customerName,
       start: booking.startDate,
       end: booking.endDate,
+      url: `stationsmanager/${booking.pickupReturnStationId}/details/${booking.id}`,
     }))
   }
 
@@ -30,6 +31,7 @@ export const mapEvents = (data: Data): Event[] => {
       start: booking.startDate,
       end: booking.endDate,
       backgroundColor: colorMap[id],
+      url: `/stationmanager/${booking.pickupReturnStationId}/details/${booking.id}`,
     }))
     return events
   })
