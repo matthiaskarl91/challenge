@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Montserat;
+  src: url('/fonts/montserat/Montserrat-VariableFont_wght.ttf')
+    format('truetype');
+}
