@@ -1,19 +1,13 @@
 import {ActionFunction, json} from 'remix'
 
-export type Customer = {
-  id: string
-  pickupReturnStationId: string
-  customerName: string
-  startDate: string
-  endDate: string
-}
+export type Station = {id: string; name: string}
 
 export type Error = {
   message: string
 }
 
 export type SearchResponse =
-  | {type: 'customer'; customers: Customer[]}
+  | {type: 'stations'; stations: Station[]}
   | {error: Error; type: 'error'}
 
 export const action: ActionFunction = async ({request}) => {
@@ -24,18 +18,17 @@ export const action: ActionFunction = async ({request}) => {
   }
 
   const searchParams = new URLSearchParams({
-    customerName: name,
+    name,
   }).toString()
 
-  const url = new URL(
-    'https://605c94c36d85de00170da8b4.mockapi.io/stations/1/bookings',
-  )
+  const url = new URL('https://605c94c36d85de00170da8b4.mockapi.io/stations')
   url.search = searchParams
 
   try {
     const response = await fetch(url.toString())
-    const customers: Customer[] = await response.json()
-    return json({customers, type: 'customer'}, {status: 200})
+    console.log({response})
+    const stations: Station[] = await response.json()
+    return json({stations, type: 'stations'}, {status: 200})
   } catch (error) {
     return json({error: (error as Error).message, type: 'error'})
   }

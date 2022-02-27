@@ -482,6 +482,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   src: url('/fonts/montserat/Montserrat-VariableFont_wght.ttf')
     format('truetype');
 }
+.hover\:bg-slate-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
 @media (min-width: 768px) {
 
   .md\:mx-auto {
