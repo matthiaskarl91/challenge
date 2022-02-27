@@ -1,4 +1,4 @@
-import {useFetcher} from 'remix'
+import {Link, useFetcher} from 'remix'
 import * as React from 'react'
 import {SearchResponse} from '~/routes/search'
 
@@ -25,7 +25,12 @@ export function Autocomplete() {
         {autocomplete?.data?.type === 'stations' ? (
           <div className="absolute z-10 w-full divide-y-2 rounded-lg bg-white drop-shadow">
             {autocomplete?.data.stations.map(item => (
-              <div className="w-full p-2 hover:bg-slate-100">{item.name}</div>
+              <Link
+                to={`/?station=${item.id}`}
+                className="flex w-full p-2 hover:bg-slate-100"
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
         ) : autocomplete?.data?.type === 'error' ? (
