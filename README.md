@@ -1,34 +1,46 @@
-# Welcome to Remix!
-
-- [Remix Docs](https://remix.run/docs)
-
-## Deployment
-
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
-
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
-
-```sh
-npm i -g vercel
-vercel
-```
-
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+# Welcome to the Station Manager!
 
 ## Development
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+To run your Remix app locally, make sure your project's local dependencies are
+installed:
 
 ```sh
 npm install
 ```
 
-Afterwards, start the Remix development server like so:
+Afterwards, start server like so:
 
 ```sh
 npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+## Example
 
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+Find this project running [here](https://roadsurfer.vercel.app/)
+
+## Explanations
+
+Here's no state manager used as my state reflects the server state. So all data
+are served via SSR and pageloads.
+
+The autocomplete filters for the station names and provides an dropdown with
+links to the specific filtered page. If there's no station selected vial the
+autocomplete I render all bookings into the calendar.
+
+I saw that I should display the name of the station. Currently this information
+is not accessible on the detail page. We could make one more request to get this
+information but I'm kinda running out of time so I just leave it like it is.
+
+Error handling is nothing really in place as the API doesn't provide any
+information on how an error can happen and in which shape. Ususally that's no
+excuse to add basic error handling to not crash the website but again I'm
+running out of time here.
+
+CSS is done with Tailwind and is quite okay-ish for now. I'm not 100% happy with
+the calendar view but it suits the case quite well.
+
+Be aware that most of the data returned by the API ending somewhere in 2021. So
+I have a fake date inside the code. Just comment it in to get lot more data.
+
+I would like to have some E2E tests in place written in Cypress or Playwright.
