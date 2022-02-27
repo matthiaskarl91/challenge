@@ -26,7 +26,7 @@ export function Autocomplete() {
           <div className="absolute z-10 w-full divide-y-2 rounded-lg bg-white drop-shadow">
             {autocomplete?.data.stations.map(item => (
               <Link
-                to={`/?station=${item.id}`}
+                to={`/stationmanager?station=${item.id}`}
                 className="flex w-full p-2 hover:bg-slate-100"
               >
                 {item.name}
