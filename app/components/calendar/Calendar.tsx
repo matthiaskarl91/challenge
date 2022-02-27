@@ -6,7 +6,7 @@ import '@fullcalendar/daygrid/main.css' // @fullcalendar/timegrid imports @fullc
 import {Event} from '~/routes/stationmanager'
 import {useNavigate} from 'remix'
 
-const fakeDate = new Date(2021, 2, 13)
+// const fakeDate = new Date(2021, 2, 13)
 
 type CalendarProps = {
   events: Event[]
@@ -20,12 +20,8 @@ export function Calendar({events}: CalendarProps) {
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridWeek"
-        initialDate={fakeDate}
+        // initialDate={fakeDate}
         events={events}
-        // eventClick={e => {
-        //   console.log({e})
-        //   navigate(`/stationmanager/${e.event.id}`)
-        // }}
       />
     </div>
   )

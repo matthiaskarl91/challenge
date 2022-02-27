@@ -26,8 +26,8 @@ export const action: ActionFunction = async ({request}) => {
 
   try {
     const response = await fetch(url.toString())
-    console.log({response})
     const stations: Station[] = await response.json()
+
     return json({stations, type: 'stations'}, {status: 200})
   } catch (error) {
     return json({error: (error as Error).message, type: 'error'})

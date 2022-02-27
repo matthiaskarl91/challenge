@@ -20,7 +20,7 @@ export const mapEvents = (data: Data): Event[] => {
       customerName: booking.customerName,
       start: booking.startDate,
       end: booking.endDate,
-      url: `stationsmanager/${booking.pickupReturnStationId}/details/${booking.id}`,
+      url: `stationmanager/${booking.pickupReturnStationId}/details/${booking.id}?station=${booking.pickupReturnStationId}`,
     }))
   }
 

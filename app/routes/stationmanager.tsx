@@ -55,7 +55,7 @@ export default function Index() {
   const events = useLoaderData<Event[]>()
 
   return (
-    <div style={{fontFamily: 'system-ui, sans-serif', lineHeight: '1.4'}}>
+    <div>
       <Autocomplete />
       <Calendar events={events} />
       <Outlet />
