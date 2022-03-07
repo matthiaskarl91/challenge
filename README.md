@@ -1,3 +1,15 @@
+# _Note for Ray Sono_:
+
+This is a project which fetches bookings for a car rental from an API filtered
+by a station. In the beginning all available data (without filtering applied) is
+requested and shown in a calendar. In the input on top you can select a station
+via the dropdown/autocomplete. If you click on an entry inside the calendar you
+will be navigated to the booking details to get further information. The whole
+application is written with Remix. Remix is a fullstack framework based on React
+and React Router. Even if it's quite new it is stable and mature up to a point
+where it's right now tricky to write component tests with @testing-library. Have
+a look into [Remix](https://remix.run/)
+
 # Welcome to the Station Manager!
 
 ## Development
@@ -17,7 +29,7 @@ npm run dev
 
 ## Example
 
-Find this project running [here](https://roadsurfer.vercel.app/)
+Find this project running [here](https://mkarlchallenge.vercel.app/)
 
 ## Explanations
 
